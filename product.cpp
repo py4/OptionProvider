@@ -28,8 +28,7 @@ void Product::respond_to_request(vector<string> & req) {
 }
 
 bool Product::preprocess_request(vector < string > & req) {
-	map<string, bool> check;
-	queue<Feature*> parents;
+	map<string, bool> seen;
 
 	for(int i = 0; i < req.size(); i++) {
 		Feature* f = root_feature->find_among_children(req[i]);
@@ -37,20 +36,12 @@ bool Product::preprocess_request(vector < string > & req) {
 			cout << "INVALID INPUT!" << endl;
 			return false;
 		}
-		if(f->parent != NULL) // take care of root
-			parents.push(f->parent);
-	}
-
-	while(!parents.empty()) {
-		Feature* front = parents.front();
-		if(find(req.begin(), req.end(), front->get_feature_name()) == req.end()) //parent not found
-			return false;
-		parents.pop();
-		if(front->parent)
-			if(!check[front->parent->get_feature_name()]) {
-				parents.push(front->parent);
-				check[front->parent->get_feature_name()] = true;
-			}
+		while(f != NULL and !seen[f->get_feature_name()]) {
+			if(find(req.begin(), req.end(), f->get_feature_name()) == req.end()) //parent not found
+				return false;	
+			seen[f->get_feature_name()] = true;
+			f = f->parent;
+		}
 	}
 	return true;
 }

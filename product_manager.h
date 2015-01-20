@@ -6,8 +6,8 @@ class ProductManager {
 
 public:
 
-	bool handle_features(Product*);
-	bool handle_requests(Product*);
+	bool handle_features(Product* const);
+	bool handle_requests(Product* const);
 	void respond();
 
 };

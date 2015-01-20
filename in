@@ -26,3 +26,15 @@ BMW = Pejo ^ Peykan^Mazda
 #
 {       MainProduct,    Ghaza, Lebas ,    Khoone, Nooshidani, Water , House, Sard , Vitamin, AbGoosht, Ostokhoon, Goosht, Sibzamini, Pirhan}
 ##
+Machine = ?A+   ?B
+A = X + Y
+B = U ^ V
+#
+{Machine}
+{Machine, A, X}
+{Machine, X, Y}
+{Machine, A, X, Y}
+{Machine, B,  U}
+{Machine, B, V, U}
+{Machine, A,B,X,Y, V}
+##
