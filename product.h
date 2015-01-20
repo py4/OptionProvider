@@ -8,13 +8,13 @@ class Product {
 public:
 	Product();
 	~Product();
-	void set_features(std::vector < std::pair < std::string, Type > > &);
-	void respond_to_request(std::vector < std::string> &);
+	void set_features(const std::vector < std::pair < std::string, Type > > &);
+	void respond_to_request(const std::vector < std::string> &);
 
 private:
 
-	bool preprocess_request(std::vector < std::string > &);
-	bool validate_request( std::vector < std::string > &);
+	bool preprocess_request(const std::vector < std::string > &);
+	bool validate_request(const std::vector < std::string > &);
 
 	Feature* root_feature;
 };

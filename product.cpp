@@ -3,6 +3,7 @@
 #include "parser.h"
 #include <queue>
 #include <algorithm>
+#include <map>
 using namespace std;
 
 Product::Product() {
@@ -13,7 +14,7 @@ Product::~Product() {
 	delete root_feature;
 }
 
-void Product::set_features(vector < pair < string, Type > >& features) {
+void Product::set_features(const vector < pair < string, Type > >& features) {
 	if(root_feature) {
 		Feature* feature = root_feature->find_among_children(features[0].first);
 		feature->set_children(features);
@@ -24,14 +25,14 @@ void Product::set_features(vector < pair < string, Type > >& features) {
 	}
 }
 
-void Product::respond_to_request(vector<string> & req) {
+void Product::respond_to_request(const vector<string> & req) {
 	if(!preprocess_request(req))
 		cout << "INVALID!" << endl;
 	else
 		cout << (root_feature->validate_request(req) ? "VALID!" : "INVALID!") << endl;
 }
 
-bool Product::preprocess_request(vector < string > & req) {
+bool Product::preprocess_request(const vector < string > & req) {
 	map<string, bool> seen;
 
 	for(int i = 0; i < req.size(); i++) {
