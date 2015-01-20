@@ -1,0 +1,15 @@
+MainProduct=    Ghaza+  Lebas  +  Khoone+Nooshidani+?Mashin
+Ghaza=Khoresh^Mast^AbGoosht^Noon
+Lebas=Short|Zirpoosh|Pirhan
+Khoone=Noghli^Aparteman^House
+Nooshidani=Ghahve^  Coffee^   Water
+Mashin=Benz^BMW^Mersedes
+Khoresh=Ghorme^Gheime^Karafs
+Mast= Gav + ?Charbi
+AbGoosht      =Goosht+    Sibzamini +?Ostokhoon
+Water = Sard ^ Garm
+Sard = Vitamin + ?Ahak
+BMW = Pejo ^ Peykan^Mazda
+#
+{       MainProduct,    Ghaza, Lebas ,    Khoone, Nooshidani, Water , House, Sard , Vitamin, Mazda, BMW, Mashin, AbGoosht, Ostokhoon, Goosht, Sibzamini}
+##
