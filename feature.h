@@ -1,5 +1,3 @@
-//TODO: for each feature, his parent should be in the list
-
 #ifndef FEATURE_H_
 #define FEATURE_H_
 

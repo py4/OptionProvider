@@ -6,11 +6,12 @@
 class Product {
 
 public:
-	void load_features();
-	void dump_feature_model();
-	void load_and_validate_request();
+	Product();
+	void set_features(std::vector < std::pair < std::string, Type > > &);
+	void respond_to_request(std::vector < std::string> &);
+
 private:
-	std::vector < std::string > load_request();
+
 	bool preprocess_request(std::vector < std::string > &);
 	bool validate_request( std::vector < std::string > &);
 

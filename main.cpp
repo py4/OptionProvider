@@ -1,12 +1,9 @@
-#include "parser.h"
 #include <iostream>
-#include "product.h"
+#include "product_manager.h"
 using namespace std;
 
 int main() {
-	Product p;
-	p.load_features();
-	//p.dump_feature_model();
-	p.load_and_validate_request();
+	ProductManager manager;
+	manager.respond();
 	return 0;
 }
