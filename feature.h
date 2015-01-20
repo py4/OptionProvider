@@ -2,14 +2,15 @@
 #define FEATURE_H_
 
 #include <string>
-#include "parser.h"
 #include <vector>
+#include "type.h"
 
 class Feature {
 
 public:
 	friend class Product;
 	Feature();
+	~Feature();
 	Feature(const std::string&, Type t);
 	void set_feature_name(const std::string&);
 	void set_feature_type(Type t);

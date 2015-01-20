@@ -1,7 +1,8 @@
 #ifndef PRODUCT_MANAGER_H_
 #define PRODUCT_MANAGER_H_
 
-#include "product.h"
+class Product;
+
 class ProductManager {
 
 public:

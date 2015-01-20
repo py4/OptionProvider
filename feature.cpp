@@ -1,10 +1,16 @@
 #include <string>
 #include "feature.h"
+#include "parser.h"
 #include <iostream>
 #include <algorithm>
 using namespace std;
 
 Feature::Feature() {}
+
+Feature::~Feature() {
+	for(int i = 0; i < children.size(); i++)
+		delete children[i];
+}
 
 Feature::Feature(const string& name, Type t) {
 	set_feature_name(name);

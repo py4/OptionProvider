@@ -9,6 +9,10 @@ Product::Product() {
 	root_feature = NULL;
 }
 
+Product::~Product() {
+	delete root_feature;
+}
+
 void Product::set_features(vector < pair < string, Type > >& features) {
 	if(root_feature) {
 		Feature* feature = root_feature->find_among_children(features[0].first);

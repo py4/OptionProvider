@@ -1,4 +1,6 @@
 #include "product_manager.h"
+#include "product.h"
+#include "parser.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -22,7 +24,7 @@ bool ProductManager::handle_features(Product* const p) {
 		if(line == "#")
 			break;
 		done_something = true;
-		vector < pair < string, Type > > features = parser::get_features(line);
+		vector < pair < string, Type > > features = get_features(line);
 		p->set_features(features);
 	}
 	return done_something;
@@ -35,7 +37,7 @@ bool ProductManager::handle_requests(Product* const p) {
 		if(line == "##")
 			break;
 		done_something = true;
-		vector < string > req = parser::get_requested_features(line);
+		vector < string > req = get_requested_features(line);
 		p->respond_to_request(req);
 	}
 	return done_something;

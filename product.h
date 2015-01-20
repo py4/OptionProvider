@@ -7,6 +7,7 @@ class Product {
 
 public:
 	Product();
+	~Product();
 	void set_features(std::vector < std::pair < std::string, Type > > &);
 	void respond_to_request(std::vector < std::string> &);
 
